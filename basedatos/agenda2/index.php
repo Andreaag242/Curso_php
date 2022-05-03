@@ -40,7 +40,7 @@
                                 <label for="movil" class="form-label">Movil</label>
                                 <input type="text" class="form-control" name="movil" id="movil">
                             </div>
-                            <button type="submit" class="btn btn-primary text-center">Enviar</button>
+                            <button type="submit" class="btn btn-primary text-center"><i class="bi bi-person-plus-fill"></i></button>
                         </form>
                     </div>
                 </div>
@@ -62,21 +62,38 @@
                         //javascript: fetch y json
                         //react o vuejs o angular
                         foreach ($resultado as $datos) {
-                        ?> 
+                        ?>
                             <tr>
-                                <td> <?php echo $datos[0]  ?> </td>
-                                <td> <?php echo $datos[1]  ?> </td>
-                                <td> <?php echo $datos[2]  ?> </td>
-                                <td> <?php echo $datos[5]  ?> </td>
-                                <td><a href="frmEditar.php?id=<?php echo $datos[0]?>" type="button" class="btn btn-info"><i class="bi bi-pencil-square"></i></a></td>
-                                <td><a href="#" type="button" class="btn btn-danger"><i class="bi bi-trash3"></i></a></td>
+                                <td> <?php echo $datos->id  ?> </td>
+                                <td> <?php echo $datos->nombre  ?> </td>
+                                <td> <?php echo $datos->apellidos  ?> </td>
+                                <td> <?php echo $datos->movil  ?> </td>
+                                <td><a href="frmEditar.php?id=<?php echo $datos->id ?>" type="button" class="btn btn-info"><i class="bi bi-pencil-square"></i></a></td>
+                                <td><a href="frmEditar.php?id=<?php echo $datos->id ?>" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-trash3"></i></a></td>
+                                
                             </tr>
-                            
+
                         <?php }; ?>
 
                     </tbody>
                 </table>
-
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content text-white bg-info mb-3">
+                            <div class="modal-header text-white bg-info mb-3">
+                                <h5 class="modal-title" id="exampleModalLabel">Contactos</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p class="card-text">Está seguro de querer eliminar el usuario: <?php echo $datos->id  ?> ? </p> 
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                <a href="CRUD/eliminarContacto.php?id=<?php echo $datos->id ?>" type="button" class="btn btn-danger"><i class="bi bi-trash3"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

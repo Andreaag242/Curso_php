@@ -1,3 +1,17 @@
+<?php
+
+$id = $_GET['id'];
+
+require_once 'CRUD/bd.php';
+$sql = 'SELECT * FROM contacto where id = ?';
+$sentencia = $pdo->prepare($sql);
+$sentencia->execute([$id]); 
+$contacto = $sentencia->fetch(PDO::FETCH_OBJ); //creo un arreglo con el resultado de la consulta
+/* echo '<pre>';
+var_dump($resultado);
+echo '</pre>'; */
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -6,7 +20,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-    <title>Hello, world!</title>
+    <title>Editar</title>
 </head>
 
 <body>
@@ -19,26 +33,30 @@
                 <div class="card">
                     <h2 class="text-center">Registro de contactos.</h2>
                     <div class="card-body">
-                        <form action="CRUD/insertarContacto.php" method="POST">
+                        <form action="CRUD/editarContacto.php" method="POST">
+                        <div class="mb-3">
+                                <label for="id" class="form-label">Id</label>
+                                <input type="text" class="form-control" name="id" id="id" value="<?php echo $contacto->id ?> " readonly>
+                            </div>
                             <div class="mb-3">
                                 <label for="nombre" class="form-label">Nombre</label>
-                                <input type="text" class="form-control" name="nombre" id="nombre">
+                                <input type="text" class="form-control" name="nombre" id="nombre" value="<?php echo $contacto->nombre ?> ">
                             </div>
                             <div class="mb-3">
                                 <label for="apellidos" class="form-label">Apellidos</label>
-                                <input type="text" class="form-control" name="apellidos" id="apellidos">
+                                <input type="text" class="form-control" name="apellidos" id="apellidos" value="<?php echo $contacto->apellidos ?> ">
                             </div>
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email</label>
-                                <input type="email" class="form-control" name="email" id="email">
+                                <input type="email" class="form-control" name="email" id="email" value="<?php echo $contacto->email ?> ">
                             </div>
                             <div class="mb-3">
                                 <label for="telefono" class="form-label">Telefono</label>
-                                <input type="text" class="form-control" name="telefono" id="telefono">
+                                <input type="text" class="form-control" name="telefono" id="telefono" value="<?php echo $contacto->telefono ?> ">
                             </div>
                             <div class="mb-3">
                                 <label for="movil" class="form-label">Movil</label>
-                                <input type="text" class="form-control" name="movil" id="movil">
+                                <input type="text" class="form-control" name="movil" id="movil" value="<?php echo $contacto->movil ?> ">
                             </div>
                             <button type="submit" class="btn btn-primary text-center">Enviar</button>
                         </form>
@@ -46,38 +64,9 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">Id</th>
-                            <th scope="col">Nombre</th>
-                            <th scope="col">Apellido</th>
-                            <th scope="col">Movil</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
-                        require_once 'crud/listarContactos.php';
-                        //templates : blade {{$listar}}
-                        //javascript: fetch y json
-                        //react o vuejs o angular
-                        foreach ($resultado as $datos) {
-                        ?> 
-                            <tr>
-                                <td> <?php echo $datos[0]  ?> </td>
-                                <td> <?php echo $datos[1]  ?> </td>
-                                <td> <?php echo $datos[2]  ?> </td>
-                                <td> <?php echo $datos[5]  ?> </td>
-                                <td><a href="frmEditar.php?id=<?php echo $datos[0]?>" type="button" class="btn btn-info"><i class="bi bi-pencil-square"></i></a></td>
-                                <td><a href="#" type="button" class="btn btn-danger"><i class="bi bi-trash3"></i></a></td>
-                            </tr>
-                            
-                        <?php }; ?>
-
-                    </tbody>
-                </table>
 
             </div>
+            
         </div>
     </div>
 
