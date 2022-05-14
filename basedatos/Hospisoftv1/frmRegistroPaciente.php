@@ -54,75 +54,63 @@
                 </div>
             </div>
         </nav>
-        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="./images/hms.jpg" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block text-dark">
-                        <h5>Médicos Especialistas</h5>
-                        <p>Some representative placeholder content for the first slide.</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="./images/hms2.jpg" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block text-dark">
-                        <h5>Laboratorios de última tecnologia</h5>
-                        <p>Some representative placeholder content for the second slide.</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="./images/hms3.jpg" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block text-dark">
-                        <h5>Atencion personalizada</h5>
-                        <p>Some representative placeholder content for the third slide.</p>
-                    </div>
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-        <div class="row mt-5">
-            <div class="col-md-4">
+        <div class="row">
+            <div class="col-md-5">
                 <div class="card">
-                    <img src="./images/especialista.jpg" class="card-img-top" alt="...">
+                    <h5 class="card-title">Registro de Paciente.</h5>
                     <div class="card-body">
-                        <h5 class="card-title">Médicos Especialistas</h5>
-                        <p class="card-text">Ver más</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <form action="app/insertarPaciente.php" method="POST">
+                            <div class="mb-3">
+                                <label for="nombre" class="form-label">Nombre</label>
+                                <input type="text" class="form-control" name="nombre" id="nombre">
+                            </div>
+                            <div class="mb-3">
+                                <label for="apellidos" class="form-label">Apellidos</label>
+                                <input type="text" class="form-control" name="apellidos" id="apellidos">
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" name="email" id="email">
+                            </div>
+                            <div class="mb-3">
+                                <label for="telefono" class="form-label">Telefono</label>
+                                <input type="text" class="form-control" name="telefono" id="telefono">
+                            </div>
+                            <div class="mb-3">
+                                <label for="movil" class="form-label">Movil</label>
+                                <input type="text" class="form-control" name="movil" id="movil">
+                            </div>
+                           
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="./images/hospitaliza.jpg" class="card-img-top" alt="...">
+            <div class="col-md-5">
+            <div class="card">
+                    <h2 class="text-center"></h2>
                     <div class="card-body">
-                        <h5 class="card-title">Hospitalización</h5>
-                        <p class="card-text">Ver más</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                            <div class="mb-3">
+                                <label for="fecha_nace" class="form-label">Fecha Nacimiento</label>
+                                <input type="date" class="form-control" name="fecha_nace" id="fecha_nace">
+                            </div>
+                            <div class="mb-3">
+                                <label for="eps" class="form-label">E.P.S</label>
+                                <input type="text" class="form-control" name="eps" id="eps">
+                            </div>
+                            <div class="mb-3">
+                                <label for="usuario" class="form-label">Usuario del Sistema</label>
+                                <input type="text" class="form-control" name="usuario" id="usuario">
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="text" class="form-control" name="password" id="password">
+                            </div>
+                            <button type="submit" class="btn btn-primary text-center"><i class="bi bi-person-plus-fill">Guardar</i></button>
+                            <a href="index.php" type="cancel"  class="btn btn-secondary text-center"><i class="bi bi-x-circle">Cancelar</i></a>
+                        </form>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="./images/Microscopio.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Laboratorios</h5>
-                        <p class="card-text">Ver más</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
+            <div class="col-md-2">Publicidad</div>
         </div>
         <div class="row mt-5 p-5 bg-dark text-light">
             <div class="col-md-6">
@@ -133,7 +121,7 @@
             </div>
             <div class="col-md-6">
                 <form>
-                    <div class="mb-3">
+                    <div class="mt-3">
                         <label for="exampleInputEmail1" class="form-label">Email address</label>
                         <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                         <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
