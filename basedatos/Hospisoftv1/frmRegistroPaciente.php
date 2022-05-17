@@ -1,3 +1,4 @@
+<?php session_start()?>
 <!doctype html>
 <html lang="en">
 
@@ -59,6 +60,7 @@
                 <div class="card">
                     <h5 class="card-title">Registro de Paciente.</h5>
                     <div class="card-body">
+                        <?php echo $resultado?>
                         <form action="app/insertarPaciente.php" method="POST">
                             <div class="mb-3">
                                 <label for="nombre" class="form-label">Nombre</label>
@@ -74,7 +76,7 @@
                             </div>
                             <div class="mb-3">
                                 <label for="telefono" class="form-label">Telefono</label>
-                                <input type="text" class="form-control" name="telefono" id="telefono">
+                                <input type="text" class="form-control" name="telefono" id="telefono" >
                             </div>
                             <div class="mb-3">
                                 <label for="movil" class="form-label">Movil</label>
@@ -89,8 +91,8 @@
                     <h2 class="text-center"></h2>
                     <div class="card-body">
                             <div class="mb-3">
-                                <label for="fecha_nace" class="form-label">Fecha Nacimiento</label>
-                                <input type="date" class="form-control" name="fecha_nace" id="fecha_nace">
+                                <label for="fechaNace" class="form-label">Fecha Nacimiento</label>
+                                <input type="date" class="form-control" name="fechaNace" id="fechaNace">
                             </div>
                             <div class="mb-3">
                                 <label for="eps" class="form-label">E.P.S</label>

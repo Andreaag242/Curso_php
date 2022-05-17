@@ -8,7 +8,7 @@ require_once 'plantilla/cabecera.php';
     </div>
     <div class="container-fluid">
     <div class="row ">
-            <div class="col-md-6">
+            <div class="col-md-3">
                 <div class="card">
                     <h2 class="text-center">Registro de contactos.</h2>
                     <div class="card-body">
@@ -38,14 +38,20 @@ require_once 'plantilla/cabecera.php';
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-9">
                 <table class="table">
                     <thead>
                         <tr>
                             <th scope="col">Id</th>
                             <th scope="col">Nombre</th>
                             <th scope="col">Apellido</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Telefono</th>
                             <th scope="col">Movil</th>
+                            <th scope="col">Fecha Nacimiento</th>
+                            <th scope="col">EPS</th>
+                            <th scope="col">Usuario</th>
+                            <th scope="col">Password</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -57,14 +63,18 @@ require_once 'plantilla/cabecera.php';
                         foreach ($resultado as $datos) {
                         ?>
                             <tr>
-                                <td> <?php echo $datos->id_paciente  ?> </td>
-                                <td> <?php echo $datos->nombre_paciente  ?> </td>
-                                <td> <?php echo $datos->apellidos_paciente  ?> </td>
-                                <td> <?php echo $datos->email  ?> </td>
-                                <td> <?php echo $datos->telefono  ?> </td>
-                                <td> <?php echo $datos->password  ?> </td>
-                                <td><a href="frmEditarPaciente.php?id=<?php echo $datos->id_paciente ?>" type="button" class="btn btn-info"><i class="bi bi-pencil-square"></i></a></td>
-                                <td><a href="frmEditarPaciente.php?id=<?php echo $datos->id_paciente ?>" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-trash3"></i></a></td>
+                                <td> <?php echo $datos->idPaciente  ?> </td>
+                                <td> <?php echo $datos->nombrePaciente  ?> </td>
+                                <td> <?php echo $datos->apellidosPaciente  ?> </td>
+                                <td> <?php echo $datos->emailPaciente  ?> </td>
+                                <td> <?php echo $datos->telefonoPaciente  ?> </td>
+                                <td> <?php echo $datos->movilPaciente  ?> </td>
+                                <td> <?php echo $datos->fechaNacimiento  ?> </td>
+                                <td> <?php echo $datos->epsPaciente  ?> </td>
+                                <td> <?php echo $datos->usuarioPaciente  ?> </td>
+                                <td> <?php echo $datos->passwordPaciente  ?> </td>
+                                <td><a href="frmEditarPaciente.php?id=<?php echo $datos->idPaciente ?>" type="button" class="btn btn-info"><i class="bi bi-pencil-square"></i></a></td>
+                                <td><a href="frmEditarPaciente.php?id=<?php echo $datos->idPaciente ?>" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-trash3"></i></a></td>
                                 
                             </tr>
 
@@ -80,11 +90,11 @@ require_once 'plantilla/cabecera.php';
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <p class="card-text">Está seguro de querer eliminar el usuario: <?php echo $datos->id_paciente  ?> ? </p> 
+                                <p class="card-text">Está seguro de querer eliminar el usuario: <?php echo $datos->idPaciente  ?> ? </p> 
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                <a href="app/eliminarPaciente.php?id=<?php echo $datos->id_paciente ?>" type="button" class="btn btn-danger"><i class="bi bi-trash3"></i></a>
+                                <a href="app/eliminarPaciente.php?id=<?php echo $datos->idPaciente ?>" type="button" class="btn btn-danger"><i class="bi bi-trash3"></i></a>
                             </div>
                         </div>
                     </div>

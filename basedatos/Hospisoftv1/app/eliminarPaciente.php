@@ -6,8 +6,8 @@ $id =$_GET['id'];
 
 //Hacer proceso de request-response
 
-$sql = "DELETE FROM medico WHERE id_medico={$id}";
+$sql = "DELETE FROM paciente WHERE idPaciente={$id}";
 $sentencia = $pdo->prepare($sql); //prepara consulta
 $sentencia->execute(); //ejecuta la sentencia sql
 
-header('Location:../medicos.php');
+header('Location:../pacientes.php');
