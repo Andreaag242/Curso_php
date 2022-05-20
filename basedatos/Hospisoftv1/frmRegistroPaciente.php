@@ -1,4 +1,5 @@
-<?php session_start()?>
+<?php session_start();
+error_reporting(0); ?>
 <!doctype html>
 <html lang="en">
 
@@ -57,10 +58,14 @@
         </nav>
         <div class="row">
             <div class="col-md-5">
+                <div class="alert alert-<?php echo $_SESSION['tipo'] ?> alert-dismissible fade show" role="alert">
+                    <?php echo $_SESSION['mensaje'];
+                    session_unset(); ?>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
                 <div class="card">
                     <h5 class="card-title">Registro de Paciente.</h5>
                     <div class="card-body">
-                        <?php echo $resultado?>
                         <form action="app/insertarPaciente.php" method="POST">
                             <div class="mb-3">
                                 <label for="nombre" class="form-label">Nombre</label>
@@ -76,38 +81,38 @@
                             </div>
                             <div class="mb-3">
                                 <label for="telefono" class="form-label">Telefono</label>
-                                <input type="text" class="form-control" name="telefono" id="telefono" >
+                                <input type="text" class="form-control" name="telefono" id="telefono">
                             </div>
                             <div class="mb-3">
                                 <label for="movil" class="form-label">Movil</label>
                                 <input type="text" class="form-control" name="movil" id="movil">
                             </div>
-                           
+
                     </div>
                 </div>
             </div>
             <div class="col-md-5">
-            <div class="card">
+                <div class="card">
                     <h2 class="text-center"></h2>
                     <div class="card-body">
-                            <div class="mb-3">
-                                <label for="fechaNace" class="form-label">Fecha Nacimiento</label>
-                                <input type="date" class="form-control" name="fechaNace" id="fechaNace">
-                            </div>
-                            <div class="mb-3">
-                                <label for="eps" class="form-label">E.P.S</label>
-                                <input type="text" class="form-control" name="eps" id="eps">
-                            </div>
-                            <div class="mb-3">
-                                <label for="usuario" class="form-label">Usuario del Sistema</label>
-                                <input type="text" class="form-control" name="usuario" id="usuario">
-                            </div>
-                            <div class="mb-3">
-                                <label for="password" class="form-label">Password</label>
-                                <input type="text" class="form-control" name="password" id="password">
-                            </div>
-                            <button type="submit" class="btn btn-primary text-center"><i class="bi bi-person-plus-fill">Guardar</i></button>
-                            <a href="index.php" type="cancel"  class="btn btn-secondary text-center"><i class="bi bi-x-circle">Cancelar</i></a>
+                        <div class="mb-3">
+                            <label for="fechaNace" class="form-label">Fecha Nacimiento</label>
+                            <input type="date" class="form-control" name="fechaNace" id="fechaNace">
+                        </div>
+                        <div class="mb-3">
+                            <label for="eps" class="form-label">E.P.S</label>
+                            <input type="text" class="form-control" name="eps" id="eps">
+                        </div>
+                        <div class="mb-3">
+                            <label for="usuario" class="form-label">Usuario del Sistema</label>
+                            <input type="text" class="form-control" name="usuario" id="usuario">
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="text" class="form-control" name="password" id="password">
+                        </div>
+                        <button type="submit" class="btn btn-primary text-center"><i class="bi bi-person-plus-fill">Guardar</i></button>
+                        <a href="index.php" type="cancel" class="btn btn-secondary text-center"><i class="bi bi-x-circle">Cancelar</i></a>
                         </form>
                     </div>
                 </div>

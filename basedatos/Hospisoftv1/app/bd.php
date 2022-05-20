@@ -1,5 +1,5 @@
 <?php
-session_start(); //activa la configuración de arreglos para almacenr las sesiones
+ //activa la configuración de arreglos para almacenr las sesiones
 
 //conexion ala base de datos de la forma tradicional
 

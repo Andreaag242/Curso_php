@@ -22,3 +22,23 @@ filter_var() con los filtros
 https://www.php.net/manual/es/filter.filters.validate.php
 
 # Algoritmos de encriptación ... bcrypt
+
+password_hash()
+
+# tipos de errores
+
+https://manuales.guebs.com/php/errorfunc.constants.html
+
+NOTICE = Advertencia de posible error
+WARNING = Error no tan grave, no rompe la ejecución del script
+ERROR = Fatales, paran el script (tumban el sistema)
+
+# variables de sesión
+
+Debido a que el protocolo http es sin estado (stateless), no guarda las variables entre diferentes programas.
+es necesario crear variables de sesión; estas se crean como un arreglo dentro del navegador, para poderlas usar mientras el uso del navegador este activo(sesión).
+Las defino en PHP con session_start() ... $_SESSION['nombreVariable] le puede asignar valores
+
+# archivos HTACCESS
+
+Me sirve para configurar el servidor web (APACHE), Ojo: existe otro servidor y es el NGINX (Este corre en linux) = dicen que es más rápido

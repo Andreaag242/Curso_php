@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require_once 'bd.php'; // incluyo la cadena de conexion php
 //recibimos la data del formulario
 $nombre = filter_var(trim($_POST['nombre'],FILTER_DEFAULT));
@@ -22,5 +22,12 @@ $sentencia->execute([$nombre,$apellidos,$email,$telefono,$movil,$fechaNace,$eps,
 
 //var_dump($sentencia->rowCount());
 //variable de sesion
-$resultado=$_SESSION['Insersión exitosa'];
+if($sentencia->rowCount()>0){
+    $_SESSION['tipo'] = 'success';
+    $_SESSION['mensaje'] = 'Operación exitosa!';
+}else{
+    $_SESSION['tipo'] = 'danger';
+    $_SESSION['mensaje'] = 'Error en la inserción!';
+}
+
 header('Location:../frmRegistroPaciente.php');
