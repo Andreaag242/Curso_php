@@ -19,5 +19,5 @@ if(!password_verify($password,$paciente->passwordPaciente)){
 } else {
     session_start();
     $_SESSION['usuarioActivo']=$paciente->usuarioPaciente;
-    header('location:../panel.php');
+    header('location:../panelPaciente.php');
 }
