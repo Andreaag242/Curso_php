@@ -60,7 +60,8 @@
           <b>
             <i class="bi bi-person-circle">
               <?php
-              echo 'el usuario'
+               //session_start();
+               echo $_SESSION['usuarioActivo'];
               ?>
             </i>
 
@@ -68,7 +69,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link bg-dark text-light" href="cerrarSistema.php"><i class="bi bi-box-arrow-right"> Salir del sistema</i></a>
+        <a class="nav-link bg-dark text-light" href="./cerrarSistema.php"><i class="bi bi-box-arrow-right">Salir del sistema</i></a>
       </li>
     </ul>
   </header>

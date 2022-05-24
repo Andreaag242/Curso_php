@@ -42,3 +42,11 @@ Las defino en PHP con session_start() ... $_SESSION['nombreVariable] le puede as
 # archivos HTACCESS
 
 Me sirve para configurar el servidor web (APACHE), Ojo: existe otro servidor y es el NGINX (Este corre en linux) = dicen que es más rápido
+
+# git y github
+
+recordar revisar siempre las credenciales del github 
+
+# segundo sprint 24/05
+
+Libreria de reportes en PDF FPDF
