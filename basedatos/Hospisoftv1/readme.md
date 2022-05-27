@@ -50,3 +50,8 @@ recordar revisar siempre las credenciales del github
 # segundo sprint 24/05
 
 Libreria de reportes en PDF FPDF
+Registro de citas (llaves compuestas)
+Imprimir Cita
+Listar la historia clinica por cada paciente
+Listar médicos por especilidad
+Actualizar perfil 

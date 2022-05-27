@@ -92,7 +92,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="frmAgendarMedico.php">
+              <a class="nav-link" href="./frmAgendarMedico.php">
                 <span data-feather="users"></span>
                 Agendar cita con Médico
               </a>
