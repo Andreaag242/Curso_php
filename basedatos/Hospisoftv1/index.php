@@ -51,6 +51,7 @@
                             <!--<a class="nav-link" href="panel.php"></a>-->
                         </li>
                     </ul>
+                    <a class="nav-link text-light" data-bs-toggle="modal" data-bs-target="#frmLoginMedico"><i class="bi bi-person-rolodex">Medico</i></a>
                 </div>
             </div>
         </nav>
@@ -174,6 +175,33 @@
                                 <input type="password" class="form-control" id="password" name="password">
                             </div>
                             ¿Aún no tiene cuenta? <a href="frmRegistroPaciente.php">Registrese Aquí</a>
+                            </div>
+                            <div class="modal-footer">
+                                <input type="reset" class="btn btn-secondary" data-bs-dismiss="modal" value="Cancelar">
+                                <input type="submit" class="btn btn-primary" value="Enviar">
+                            </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="frmLoginMedico" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Acceso Médicos</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="./images/loginMedico.jpg" class="rounded mx-auto d-block shadow p-1" alt="Login Doctor">
+                        <form action="app/validarIngresoMedico.php" method="POST">
+                            <div class="mb-3">
+                                <label for="idMedico" class="form-label">Identificación</label>
+                                <input type="text" class="form-control" id="idMedico" name="idMedico" aria-describedby="usuarioHelp">
+                                <div id="usuarioHelp" class="form-text">Ingrese su usuario registrado en el sistema</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="passMedico" class="form-label">Clave</label>
+                                <input type="passMedico" class="form-control" id="passMedico" name="passMedico">
                             </div>
                             <div class="modal-footer">
                                 <input type="reset" class="btn btn-secondary" data-bs-dismiss="modal" value="Cancelar">
