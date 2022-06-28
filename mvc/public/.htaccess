@@ -1,8 +1,8 @@
 <ifModule mod_rewrite.c>
 Options -Multiviews
-RewriteEngine On
-#TENER EN CUENTA LA RUTA FULL PARA EL CORE
-RewriteBase /www/curso_php/mvc
+RewriteEngine On 
+#tener en cuenta la ruta 
+RewriteBase /walterphp/mvc/public
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]

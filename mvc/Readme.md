@@ -1,7 +1,9 @@
-## MODELO VISTA CONTROLADOR CON PHP PURO
-    La carpeta app contiene la logica del MVC
-    En el subdirectorio libs tendremos las clases bases del sistema
-    La carpeta public el material que se puede acceder publicamente
+## modelo vista controlador con php puro
 
-    Ojo: Este MVC es basado en BRAD TRAVERSY, libro pendiente
-    YOUTUBER DE COLOMBIA PENDIENTE..
+la carpeta app contiene la logica del mvc
+en el subdirectori libs tendremos las clase base del sistema
+
+la carpeta public el material que se puede acceder publicamente
+
+
+ojo: este Mvc es basado en Brad traversy, libro pendiente
