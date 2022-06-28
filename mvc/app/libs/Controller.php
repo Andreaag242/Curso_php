@@ -11,14 +11,14 @@ class Controller
 
 public function loadModel($model)
 {
- require_once'../app/models'. $model .'.php';
- //instanciamos la clase modelo 
- return new $model;
+    require_once '../app/models/'. $model .'.php';
+    //instanciamos la clase modelo 
+    return new $model();
 }
 public function getview($view,$data=[])
 {
     if (file_exists('../app/views/' .$view.'.php')){
-        require_once'../app/views/'.$view.'.php';
+        require_once '../app/views/'.$view.'.php';
     }
     else{
         die('no existe la vista invocada estupido!! 7w7');

@@ -2,7 +2,7 @@
 Options -Multiviews
 RewriteEngine On 
 #tener en cuenta la ruta 
-RewriteBase /walterphp/mvc/public
+RewriteBase /curso_php/mvc/public
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]

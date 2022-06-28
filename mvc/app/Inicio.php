@@ -1,6 +1,11 @@
 <?php
 
 //cargamos la librerias
-require_once'libs/Core.php';
-require_once'libs/Controller.php';
-require_once'libs/Dbase.php';
+require_once 'config/config.php';
+
+//TODO: CORREGIR ESTE CODIGO CON AUTO CARGA DE SPL
+
+require_once 'libs/Core.php'; // rutas o enrutador del framework
+require_once 'libs/Controller.php'; //orm del framework
+require_once 'libs/Dbase.php'; // CONTROLADOR BASE
+

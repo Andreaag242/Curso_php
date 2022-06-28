@@ -8,5 +8,9 @@
 </head>
 <body>
     <marquee behavior="" direction=""><h1>medicos</h1></marquee>
+
+    <?php
+        var_dump($data);
+    ?>
 </body>
 </html>
