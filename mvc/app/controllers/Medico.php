@@ -13,7 +13,7 @@ class Medico extends Controller
   {
     $data = $this->MedicoModel->listarMedicos(); //temporal porque no hay dataa
     // return 'este es el metodo index';
-    $this->getview('Medico',$data);
+    $this->renderView('Medico',$data);
   }
 
   public function generarFormula()
