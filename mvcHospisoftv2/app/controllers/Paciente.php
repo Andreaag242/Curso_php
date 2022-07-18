@@ -1,26 +1,19 @@
 <?php
 
-
-
-class Medico extends Controller
+class Paciente extends Controller
 {
     public function __construct()
     {
         //Configuramos el modelo correspondiente a este controlador
-        $this->medicoModel =  $this->loadModel('MedicoModel');
+        $this->pacienteModel =  $this->loadModel('PacienteModel');
     }
     public function index()
     {
-        $data = $this->medicoModel->listar(); //
+        $data = $this->pacienteModel->listar(); //
         //$data =[]; //temporal porque no hay dataa
        // return 'este es el metodo index';
-       $this->renderView('Medico/MedicoInicio',$data);
+       $this->renderView('Paciente/PacienteInicio',$data);
 
-    }
-
-    public function formAdd(){
-        $data = [];
-        $this->renderView('Medico/MedicoAgregar', $data);
     }
 
     public function add(){

@@ -1,6 +1,6 @@
 <?php
 //modelo correspondiente a cada controlador
-class MedicoModel{
+class PacienteModel{
     private $db;
 
     public function __construct(){
@@ -8,7 +8,7 @@ class MedicoModel{
     }
     public function listar()
     {
-        $this->db->query("SELECT * FROM medico");
+        $this->db->query("SELECT * FROM paciente");
         $resultSet = $this->db->getAll();
         return $resultSet;
     }
