@@ -9,9 +9,9 @@ Constantes
 define('APPROOT', dirname(dirname(__FILE__)));
 //echo APPROOT;
 //URL DE LA APP
-define('URLROOT','http://localhost/curso_php/mvc/');
+define('URLROOT','http://localhost/Curso_php/mvcHospisoftv2/');
 //NOMBRE DE LA APLICACIÖN
-define('SITENAME', 'MICROFRAMEWORK MVC');
+define('SITENAME', 'Aplicacion Hospital Version MVC');
 //CREDENCIALES PARA LA BASE DE DATOS
 //FIXME: Cambiar a la forma nueva de hacer const
 define('DB_HOST',  'localhost'); // ojo: cambiarla en el deploy
