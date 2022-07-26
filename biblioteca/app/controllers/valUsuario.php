@@ -1,18 +1,19 @@
 <?php
 
-class Paciente extends Controller
+class Usuario extends Controller
 {
     public function __construct()
     {
         //Configuramos el modelo correspondiente a este controlador
-        $this->pacienteModel =  $this->loadModel('PacienteModel');
+        $this->usuarioModel =  $this->loadModel('UsuarioModel');
     }
     public function index()
     {
-        $data = $this->pacienteModel->listar(); //
+ 
+        $data = $this->usuarioModel->validarUsuario(); //
         //$data =[]; //temporal porque no hay dataa
        // return 'este es el metodo index';
-       $this->renderView('Paciente/PacienteInicio',$data);
+       $this->renderView('Dashboard/Dashboard',$data);
 
     }
 
