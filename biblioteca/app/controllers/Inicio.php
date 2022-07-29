@@ -1,18 +1,29 @@
 <?php
 
-
-
 class Inicio extends Controller
 {
+
     public function __construct()
     {
-        
+        $this->usuarioModel =  $this->loadModel('UsuarioModel');
     }
     public function index()
     {
-        $data = $this->usuarioModel->validarUsuario(); //temporal porque no hay dataa
-       // return 'este es el metodo index';
-       $this->renderView('Inicio',$data);
+        $data = [];  //temporal porque no hay
+        $this->renderView('Inicio', $data);
+    }
+    public function abrirMenu(){
+        $data = [];
+        $data=$this->usuarioModel->validarUsuario();
+        if($data=="Vacio"){
+            $this->renderView('Inicio', $data);  
+        }else{
 
+            session_start();
+
+            $_SESSION['usuario'] = $data->usuario;
+
+            $this->renderView('Dashboard/Dashboard',$data);
+        }
     }
 }

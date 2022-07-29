@@ -6,7 +6,6 @@
             <h1>Médico</h1>
         </div>
         <div class="col-6">
-            
             <a href="<?php echo URLROOT; ?>Medico/formAdd" type="button" class="btn btn-success">Agregar</a>
         </div>
     </div>

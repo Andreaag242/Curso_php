@@ -6,7 +6,7 @@ $passMedico = filter_var(trim($_POST['passMedico'],FILTER_DEFAULT));
 /* echo '<pre>';
 var_dump($usuario,$password);
 echo '</pre>'; */
-$sql = 'SELECT * FROM medico where idMedico= ?';
+$sql = 'SELECT * FROM medico where id_medico= ?';
 $sentencia = $pdo->prepare($sql); //prepara consulta
 $sentencia->execute([$idMedico]);
 $medico = $sentencia->fetch(PDO::FETCH_OBJ); //ejecuta la sentencia sql

@@ -109,8 +109,8 @@
   <script src="<?php echo URLROOT; ?>js/core/bootstrap.min.js"></script>
   <script src="<?php echo URLROOT; ?>js/plugins/perfect-scrollbar.min.js"></script>
   <script src="<?php echo URLROOT; ?>js/plugins/smooth-scrollbar.min.js"></script>
-  <script src="<?php echo URLROOT; ?>js/plugins/chartjs.min.js"></script>
-  <script>
+ <!--  <script src="<?php echo URLROOT; ?>js/plugins/chartjs.min.js"></script> -->
+ <!--  <script>
     var ctx1 = document.getElementById("chart-line").getContext("2d");
 
     var gradientStroke1 = ctx1.createLinearGradient(0, 230, 0, 50);
@@ -192,7 +192,7 @@
         },
       },
     });
-  </script>
+  </script> -->
   <script>
     var win = navigator.platform.indexOf('Win') > -1;
     if (win && document.querySelector('#sidenav-scrollbar')) {
