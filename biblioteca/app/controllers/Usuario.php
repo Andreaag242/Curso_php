@@ -13,6 +13,10 @@ class Usuario extends Controller
         $this->renderView('Usuario/UsuarioInicio', $data);
 
     }
+    public function formAdd(){
+        $data = [];
+        $this->renderView('Usuario/UsuarioEditar', $data);
+    }
     
        
 }
