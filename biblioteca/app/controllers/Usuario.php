@@ -14,9 +14,40 @@ class Usuario extends Controller
 
     }
     public function formAdd(){
-        $data = [];
-        $this->renderView('Usuario/UsuarioEditar', $data);
+        $data = $this->usuarioModel->roles();
+        $this->renderView('Usuario/UsuarioForm', $data);
     }
-    
+
+    public function agregarUsuario(){
+        if ($_SERVER['REQUEST_METHOD'] == "POST") {
+            $data = [
+                'idUsuario' => $_POST['idUsuario'],
+                'nombre1Usuario' => $_POST['nombre1Usuario'],
+                'nombre2Usuario' => $_POST['nombre2Usuario'],
+                'apellido1Usuario' => $_POST['apellido1Usuario'],
+                'apellido2Usuario' => $_POST['apellido2Usuario'],
+                'fechaNaceUsuario' => $_POST['fechaNaceUsuario'].date('Y-m-d'),
+                'telefonoUsuario' => $_POST['telefonoUsuario'],
+                'direccionUsuario' => $_POST['direccionUsuario'],
+                'usuario' => $_POST['usuario'],
+                'passUsuario' => $_POST['passUsuario'],
+                'rolUsuario' => $_POST['rolUsuario']
+            ];
+            $resultado = $this->usuarioModel->addUsuario($data);
+            if ($resultado) {
+                $data = [
+                    'mensaje' => 'insercion exitosa'
+                ];
+                $this->renderView('Usuario/UsuarioForm', $data);
+            } else {
+                $data = [
+                    'mensaje' => 'error en la insercion'
+                ];
+                $this->renderView('Medico/MedicoAgregar', $data);
+            }
+        } else {
+            echo 'Atención! los datos no fueron enviados de un formulario';
+        }   
+    }
        
 }
