@@ -56,7 +56,7 @@ class Dbase
 
     //procesar las consultas y aplicar el prepare
     public function query($sql){
-        $this->stmt = $this->dbh->prepare($sql);
+       return $this->stmt = $this->dbh->prepare($sql);
     }
     //ejecuta la consulta
     public function execute(){

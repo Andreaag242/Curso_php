@@ -42,20 +42,21 @@ class UsuarioModel{
         return $resultSet;
     }
     public function addUsuario($data){
-        $this->db->query("INSERT INTO usuario(idUsuario, nombre1, nombre2, apellido1, apellido2, telefono, direccion, usuario, passwordUsuario, rol_idRol) VALUES (:idUsuario,:nombre1Usuario,:nombre2Usuario,:apellido1Usuario,:apellido2Usuario,:fechaNaceUsuario,:telefonoUsuario,:direccionUsuario,:usuario,:passUsuario,:rolUsuario)");
+        $valor =  $this->db->query("INSERT INTO `usuario` (idUsuario , nombre1 ,nombre2,apellido1, apellido2, fechaNacimiento,  telefono, direccion, usuario, passwordUsuario, rol_idRol) 
+        VALUES (:id,:nom1,:nom2,:ape1,:ape2,:fechaN,:tel,:dir,:user,:pass,:rol)");
         //bindiamos
-        $this->db->bind(':idUsuario', $data['idUsuario']);
-        $this->db->bind(':nombre1Usuario', $data['nombre1Usuario']);
-        $this->db->bind(':nombre2Usuario', $data['nombre2Usuario']);
-        $this->db->bind(':apellido1Usuario', $data['apellido1Usuario']);
-        $this->db->bind(':apellido2Usuario', $data['apellido2Usuario']);
-        $this->db->bind(':fechaNaceUsuario', "sd", $data['fechaNaceUsuario']);
-        $this->db->bind(':telefonoUsuario', $data['telefonoUsuario']);
-        $this->db->bind(':direccionUsuario', $data['direccionUsuario']);
-        $this->db->bind(':usuario', $data['usuario']);
-        $this->db->bind(':passUsuario', $data['passUsuario']);
-        $this->db->bind(':rolUsuario', $data['rolUsuario']);
-        //verificamos la ejecucion correcta del query
+        $valor->bindParam(':id', $data['idUsuario'],PDO::PARAM_INT);
+        $valor->bindParam(':nom1', $data['nombre1Usuario'],PDO::PARAM_STR);
+        $valor->bindParam(':nom2', $data['nombre2Usuario'],PDO::PARAM_STR);
+        $valor->bindParam(':ape1', $data['apellido1Usuario'],PDO::PARAM_STR);
+        $valor->bindParam(':ape2', $data['apellido2Usuario'],PDO::PARAM_STR);
+        $valor->bindParam(':fechaN', $data['fechaNaceUsuario'],PDO::PARAM_STR);
+        $valor->bindParam(':tel', $data['telefonoUsuario'],PDO::PARAM_STR);
+        $valor->bindParam(':dir', $data['direccionUsuario'],PDO::PARAM_STR);
+        $valor->bindParam(':user', $data['usuario'],PDO::PARAM_STR);
+        $valor->bindParam(':pass', $data['passUsuario'],PDO::PARAM_STR);
+        $valor->bindParam(':rol', $data['rolUsuario'],PDO::PARAM_INT);
+        //verificamos la ejecucion correcta del query*/
         if ($this->db->execute()) {
             return true;
         } else {

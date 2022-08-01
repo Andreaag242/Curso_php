@@ -1,6 +1,8 @@
 <?php require_once APPROOT . "/views/inc/header.php"; ?>
 <div class="container-fluid py-4">
 
+    <?php echo $data['mensaje']; ?>
+
     <div class="row">
         <div class="col-12">
 

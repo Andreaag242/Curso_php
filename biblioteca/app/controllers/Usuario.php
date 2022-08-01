@@ -26,7 +26,7 @@ class Usuario extends Controller
                 'nombre2Usuario' => $_POST['nombre2Usuario'],
                 'apellido1Usuario' => $_POST['apellido1Usuario'],
                 'apellido2Usuario' => $_POST['apellido2Usuario'],
-                'fechaNaceUsuario' => $_POST['fechaNaceUsuario'].date('Y-m-d'),
+                'fechaNaceUsuario' => $_POST['fechaNaceUsuario'],
                 'telefonoUsuario' => $_POST['telefonoUsuario'],
                 'direccionUsuario' => $_POST['direccionUsuario'],
                 'usuario' => $_POST['usuario'],
@@ -38,12 +38,12 @@ class Usuario extends Controller
                 $data = [
                     'mensaje' => 'insercion exitosa'
                 ];
-                $this->renderView('Usuario/UsuarioForm', $data);
+                $this->formAdd();
             } else {
                 $data = [
                     'mensaje' => 'error en la insercion'
                 ];
-                $this->renderView('Medico/MedicoAgregar', $data);
+                $this->formAdd();
             }
         } else {
             echo 'Atención! los datos no fueron enviados de un formulario';
