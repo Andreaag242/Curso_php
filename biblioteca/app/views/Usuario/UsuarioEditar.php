@@ -15,7 +15,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="col p-3 ps-5">
-                            <form role="form" method="POST" action="<?php echo URLROOT; ?>Usuario/agregarUsuario">
+                            <form role="form" method="POST" action="<?php echo URLROOT; ?>Usuario/editarUsuario">
                                 <input type="text" name="idUsuario" class="form-control w-50" placeholder="Identificación">
                                 <br>
                                 <input type="text" name="nombre1Usuario" class="form-control w-75" placeholder="Primer Nombre">

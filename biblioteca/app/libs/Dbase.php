@@ -35,9 +35,10 @@ class Dbase
     // le deben llegar 3 parametros a la consulta:
     //el parametro,el valor adjunto y el tipo de parametro
     // @return parametro
-    public function bind($parameter,$value, $type=null){
-        if(is_null($type)){
-            switch(true){
+    public function bind($parameter, $value, $type = null)
+    {
+        if (is_null($type)) {
+            switch (true) {
                 case is_int($value):
                     $type = PDO::PARAM_INT;
                     break;
@@ -52,6 +53,7 @@ class Dbase
                     break;
             }
         }
+        return $this->stmt->bindValue($parameter, $value, $type);
     }
 
     //procesar las consultas y aplicar el prepare

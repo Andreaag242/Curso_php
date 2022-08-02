@@ -20,7 +20,6 @@ class Inicio extends Controller
         }else{
 
             session_start();
-
             $_SESSION['usuario'] = $data->usuario;
 
             $this->renderView('Dashboard/Dashboard',$data);
